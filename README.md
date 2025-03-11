@@ -135,4 +135,3 @@ npx playwright codegen --target=python https://example.com
   ```
 - **Dependency Issues:** Verify that all dependencies are installed correctly by reviewing the output during installation.
 - **Further Help:** Check the official Playwright documentation for additional configuration options and troubleshooting tips.
-```
