@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- I'm using a ubuntu machine
+- Ubuntu machine
 - [Node.js and npm](https://nodejs.org/) (if not installed, see steps below)
 
 ## Step-by-Step Guide
@@ -21,7 +21,7 @@ Install Node.js and npm:
 sudo apt install nodejs npm
 ```
 
-> **Note:** The version available from Ubuntu repositories might be older. If you need a more recent version, consider installing Node via [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm).
+> **Note:** The version available from the Ubuntu repositories might be older. If you need a more recent version (Playwright requires Node.js 14 or higher), consider installing Node via [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm).
 
 Verify your installations:
 
@@ -29,6 +29,40 @@ Verify your installations:
 node -v
 npm -v
 ```
+
+### Troubleshooting: Node.js Version Error
+
+If you see an error like:
+
+```bash
+You are running Node.js 12.22.9.
+Playwright requires Node.js 14 or higher. 
+Please update your version of Node.js.
+```
+
+It means your current Node.js version is outdated. To update:
+
+1. **Install nvm** (if not already installed):
+
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+   ```
+
+   Then, close and reopen your terminal or run `source ~/.bashrc` (or `source ~/.zshrc` if using Zsh) to load nvm.
+
+2. **Install the latest LTS version of Node.js:**
+
+   ```bash
+   nvm install --lts
+   ```
+
+3. **Verify the update:**
+
+   ```bash
+   node -v
+   ```
+
+   Ensure the version is 14 or higher.
 
 ### 2. Set Up a New Playwright Project
 
@@ -88,7 +122,9 @@ npx playwright codegen --target=python https://example.com
 
 ## Troubleshooting
 
-- **Node.js Version:** Ensure your Node.js version is up-to-date. Consider using nvm for managing Node versions.
+- **Node.js Version:** Ensure your Node.js version is up-to-date. If you encounter the Node.js version error, follow the instructions above to install and use nvm.
 - **Dependency Issues:** Verify that all dependencies are installed correctly by reviewing the output during installation.
 - **Further Help:** Check the official Playwright documentation for additional configuration options and troubleshooting tips.
+```
 
+Simply copy the content above into your `README.md` file, commit it to your GitHub repository, and it will serve as a complete guide including the necessary troubleshooting steps.
