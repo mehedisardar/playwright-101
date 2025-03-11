@@ -76,7 +76,13 @@ npm init -y
 
 ### 3. Install Playwright
 
-Install Playwright as a dependency:
+Before installing Playwright, if you encounter errors related to image format dependencies (such as libavif), install the required package:
+
+```bash
+sudo apt-get install libavif-dev
+```
+
+Then, install Playwright as a dependency:
 
 ```bash
 npm install playwright
@@ -123,8 +129,10 @@ npx playwright codegen --target=python https://example.com
 ## Troubleshooting
 
 - **Node.js Version:** Ensure your Node.js version is up-to-date. If you encounter the Node.js version error, follow the instructions above to install and use nvm.
+- **libavif Dependency:** If you receive errors related to image format dependencies, install `libavif-dev` using:
+  ```bash
+  sudo apt-get install libavif-dev
+  ```
 - **Dependency Issues:** Verify that all dependencies are installed correctly by reviewing the output during installation.
 - **Further Help:** Check the official Playwright documentation for additional configuration options and troubleshooting tips.
 ```
-
-Simply copy the content above into your `README.md` file, commit it to your GitHub repository, and it will serve as a complete guide including the necessary troubleshooting steps.
